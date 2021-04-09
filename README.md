@@ -94,7 +94,7 @@
 (g1 == g2)의 결과값이 true라는 것은 g1과 g2가 같은 객체라는 것을 의미함. 즉, 아래코드에서 getBean() 메서드는 같은 객체를 리턴하는 것임.
 
 스프링은 별도 설정을 하지 않을 경우 한 개의 빈 객체만을 생성하며, 이들 빈 객체들이 ‘싱글톤(singleton)' 범위를 갖는다고 표현함. 싱글톤은 단일 객체를 의미하는 단어로서, 스프링은 기본적으로 한 개의 <bean> 태그에 대해 한 개의 빈 객체를 생성함. 따라서, 만약 다음과 같이 설정을 사용하다면, 생성 되는 빈 객체는 “greeter"에 해당하는 한 개 객채와 ”greeter1"에 해당하는 한 개 객체, 이렇게 두 개의 빈 객체가 생성됨.
-![image](https://user-images.githubusercontent.com/34331235/114176418-12785a00-9976-11eb-8222-67f1ca9cb2b5.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176418-12785a00-9976-11eb-8222-67f1ca9cb2b5.png)<br>
 
 
 ## **3장. 스프링 DI**
@@ -123,7 +123,7 @@
 ### **스프링의 DI 설정**
 - 스프링은 조립기 클래스의 생성자 코드처럼 필요한 객체를 생성하고 객체에 의존을 주입해줌.
 - XML파일을 이용해 설정 정보를 작성해야 어떤 객체를 생성하고, 의존을 어떻게 주입할지 결정할수 있음.
-![image](https://user-images.githubusercontent.com/34331235/114176596-53706e80-9976-11eb-8a0f-7bffadb024b3.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176596-53706e80-9976-11eb-8a0f-7bffadb024b3.png)<br>
 - *.xml 파일
 
 ### **DI 방식 1 : 생성자 방식 (생성자 주입)**
@@ -131,20 +131,20 @@
 - 빈 객체를 생성하는 시점에 모든 의존 객체가 주입됨.
 - **장점)** 빈 객체를 생성하는 시점에 의존한 모든 의존 객체를 주입받기 때문에, 이후 객체를 사용시 완전한 상태로 사용가능함.
 - **단점)** 생정자의 피라미터 개수가 많을 경우, 태그가 어떤 의존 객체를 설정하는지 알아내려면 일일이 생성자의 코드를 확인해야함.
-![image](https://user-images.githubusercontent.com/34331235/114176620-5f5c3080-9976-11eb-9e03-07112028fc86.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176620-5f5c3080-9976-11eb-9e03-07112028fc86.png)<br>
 - *.java 파일
 
-![image](https://user-images.githubusercontent.com/34331235/114176725-8450a380-9976-11eb-9337-8aa9760d5310.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176725-8450a380-9976-11eb-9337-8aa9760d5310.png)<br>
 - *.xml 파일
 
 ### **DI 방식 2 : 설정 메서드 방식 (세터 주입)**
 - set으로 시작하는 프로퍼티 설정 메서드를 통해서 의존 객체를 주입할수 있음.
 - **장점)** <property> 태그의 name 속성을 통해 어떤 의존 객체가 주입되는지 알수 있음.
 - **단점)** <propety> 태그가 누락되어 도 빈객체가 생성되기 때문에, 객체를 사용하는 시점에 NullPointerException이 발생할 수 있음.
-![image](https://user-images.githubusercontent.com/34331235/114176775-97637380-9976-11eb-94b3-b3cfbe176cdc.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176775-97637380-9976-11eb-94b3-b3cfbe176cdc.png)<br>
 - *.java 파일
 
-![image](https://user-images.githubusercontent.com/34331235/114176780-992d3700-9976-11eb-8358-9bc685b55bfb.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176780-992d3700-9976-11eb-8358-9bc685b55bfb.png)<br>
 - *.xml 파일
 
 
@@ -157,10 +157,10 @@
 ### **@AutoWired 애노테이션을 이용한 의존 자동 주입**
 - 자동 주입 대상에 @Autowired 애노테이션을 사용함
 - xml 설정에 <context:annotation-config /> 설정을 추가함
-![image](https://user-images.githubusercontent.com/34331235/114176831-a813e980-9976-11eb-9e6b-30274d98d04a.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176831-a813e980-9976-11eb-9e6b-30274d98d04a.png)<br>
 - *.xml 파일
-<br>
-![image](https://user-images.githubusercontent.com/34331235/114176839-ab0eda00-9976-11eb-9dad-485eedcfd242.png)<br>
+
+<br>![image](https://user-images.githubusercontent.com/34331235/114176839-ab0eda00-9976-11eb-9dad-485eedcfd242.png)<br>
 - *.java 파일
 
 ### **<context:annotation-config> 태그의 처리**
@@ -174,15 +174,15 @@
 - 설정에서 빈의 한정자 값을 설정함.
 - @Autowired 애노테이션이 적용된 주입 대상에 @Qualifier 애노테이션을 설정함.
 - 이때, @Qualifier의 값으로 앞서 설정한 한정자를 사용함.
-![image](https://user-images.githubusercontent.com/34331235/114176900-b82bc900-9976-11eb-9bca-fc2cc1e1dde0.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176900-b82bc900-9976-11eb-9bca-fc2cc1e1dde0.png)<br>
 - *.xml 파일
-![image](https://user-images.githubusercontent.com/34331235/114176913-ba8e2300-9976-11eb-8547-7e5605f4039e.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176913-ba8e2300-9976-11eb-8547-7e5605f4039e.png)<br>
 - *.java 파일
 
 ### **@Autowired의 필수 여부 지정**
 - 스프링 컨테이너를 생성하면, @Autowired가 적용된 대상에 주입할 객첼르 찾을 수 없을 때 예외가 발생함.
 - @Autowired 애노테이션이 적용된 대상에 꼭 의존 객체를 주입하지 않아도 될 때가 있고, 그럴 때 @Autowired 애노테이션의 required 속성값을 false로 지정하여 사용함.
-![image](https://user-images.githubusercontent.com/34331235/114176962-c8dc3f00-9976-11eb-92c7-86611f4f1532.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176962-c8dc3f00-9976-11eb-92c7-86611f4f1532.png)<br>
 - *.java 파일
 
 ### **@Autowired 애노테이션의 적용 순서**
@@ -194,10 +194,10 @@
 - @Autowired 애노테이션이 타입을 이용해서 주입할 객체를 검색한다면, @Resource 애노테이션은 빈의 이름을 이용해서 주입할 객체를 검색함. 다음과 같이하여 사용함.
 - 자동 주입 대상에 @Resource 애노테이션 사용함.
 - xml 설정에 <context:annotation-config /> 설정 추가함
-![image](https://user-images.githubusercontent.com/34331235/114176984-d265a700-9976-11eb-9d71-3396ddb067c7.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176984-d265a700-9976-11eb-9d71-3396ddb067c7.png)<br>
 - *.xml 파일
 
-![image](https://user-images.githubusercontent.com/34331235/114176990-d42f6a80-9976-11eb-902e-3a94bdbef239.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114176990-d42f6a80-9976-11eb-902e-3a94bdbef239.png)<br>
 - *.java 파일
 
 ### **@Resource 애노테이션의 적용 순서**
@@ -220,14 +220,14 @@
 - 자바 코드를 이용해서 스프링을 설정하는 방식은 XML으로 설정하는 것과 크게 다르지 않음.
 - XML문법 대신 자바코드를 이용해 빈 객체를 생성하고 프로퍼티를 설정함.
 - GenericXmlApplicationContext 클래스 대신 AnnotationConfigApplicationContext 클래스를 이용해서 컨테이너를 생성함
-![image](https://user-images.githubusercontent.com/34331235/114177161-0a6cea00-9977-11eb-8081-796929085edd.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177171-0e007100-9977-11eb-9eba-59e6cd985bb4.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177161-0a6cea00-9977-11eb-8081-796929085edd.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177171-0e007100-9977-11eb-9eba-59e6cd985bb4.png)<br>
 
 - XML설정은 빈 객체를 스프링 컨테이너가 생성하는 반면에 자바 설정에서는 자바 설정 코드에서 직접 객체를 생성함.
-![image](https://user-images.githubusercontent.com/34331235/114177191-135dbb80-9977-11eb-959e-7b04078a2ebe.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177191-135dbb80-9977-11eb-959e-7b04078a2ebe.png)<br>
 
 - 의존 객체 주입도 마찬가지임. XML 설정에서는 <property> 태그나 <constructor-arg>태그를 이용해서 설정한 의존 객체도 컨테이너가 주입하는 반면에, 자바 설정에서는 직접 의존 객체를 주입해주어야 함.
-![image](https://user-images.githubusercontent.com/34331235/114177206-15c01580-9977-11eb-8f17-9efb28e5e32e.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177206-15c01580-9977-11eb-8f17-9efb28e5e32e.png)<br>
 
 - 다른 빈 객체의 메서드를 호출하는 것은 ref 속성을 사용하는 것과 같음.
 
@@ -248,8 +248,8 @@
 
 ### **두 개 이상 클래스를 사용한 설정**
 - 두  개 이상의 XML 설정 파일을 사용할 수 있는 것처럼 두 개 이상의 자바 설정 클래스를 사용 가능함.
-![image](https://user-images.githubusercontent.com/34331235/114177273-296b7c00-9977-11eb-94d5-e7db88a747b8.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177280-2bcdd600-9977-11eb-9880-ab2c33dde62b.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177273-296b7c00-9977-11eb-94d5-e7db88a747b8.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177280-2bcdd600-9977-11eb-9880-ab2c33dde62b.png)<br>
 
 ### **@Configuration 클래스를 주입받아 의존 설정하기**
 - 스프링은 실제로 @Configuration 애노테이션이 적용된 클래스의 객체를 스프링 빈으로 등록함.
@@ -258,18 +258,18 @@
 ### **@Import 애노테이션 사용**
 - 두 개 이상의 자바 설정이 있을 때, 이를 사용하는 또 다른 방법임.
 - @Import 애노테이션의 값으로는 자바 설정 클래스의 목록을 지정함.
-![image](https://user-images.githubusercontent.com/34331235/114177360-47d17780-9977-11eb-83fb-cfaed349be11.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177360-47d17780-9977-11eb-83fb-cfaed349be11.png)<br>
 
 ### **자바 코드 설정과 XML 설정의 혼합**
 **- 자바 설정에서 XML 설정 임포트하기**
-![image](https://user-images.githubusercontent.com/34331235/114177343-41db9680-9977-11eb-906b-9b302db8625c.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177343-41db9680-9977-11eb-906b-9b302db8625c.png)<br>
 
 **- XML 설정에서 자바 설정 임포트하기**
 - <context::annotation-config /> 설정 추가
 - @Configuration 애노테이션 적용 클래스를 <bean> 태그로 등록
-![image](https://user-images.githubusercontent.com/34331235/114177414-57e95700-9977-11eb-87cd-3d8bc81d186b.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177431-5c157480-9977-11eb-9253-88b83c6b2cbf.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177441-5ddf3800-9977-11eb-8bca-f46db67f9bdb.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177414-57e95700-9977-11eb-87cd-3d8bc81d186b.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177431-5c157480-9977-11eb-9253-88b83c6b2cbf.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177441-5ddf3800-9977-11eb-8bca-f46db67f9bdb.png)<br>
 
 
 ## **6장. 빈 라이프 사이클과 범위**
@@ -281,7 +281,7 @@
 ### **01. 컨테이너의 초기화와 종료**
 - 컨테이너 초기화 -> 빈 객체의 생성과 의존 객체 주입 및 초기화
 - 컨테이너 종료 -> 빈 객체의 소멸
-![image](https://user-images.githubusercontent.com/34331235/114177480-6a639080-9977-11eb-96ee-93e1e87abf05.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177480-6a639080-9977-11eb-96ee-93e1e87abf05.png)<br>
 
 
 ### **02. 빈 객체의 라이프사이클**
@@ -294,16 +294,16 @@
 ### **02. 1 빈객체의 초기화와 소멸 : 스프링 인터페이스**
 - org.springframework.beans.factory.InitalizingBean
 - org.springframework.beans.factory.DisposableBean
-![image](https://user-images.githubusercontent.com/34331235/114177515-73ecf880-9977-11eb-8fd2-3f0d0c80109d.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177519-75b6bc00-9977-11eb-9912-31c43e0a947b.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177525-77807f80-9977-11eb-96cb-40e3c5daf8f8.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177515-73ecf880-9977-11eb-8fd2-3f0d0c80109d.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177519-75b6bc00-9977-11eb-9912-31c43e0a947b.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177525-77807f80-9977-11eb-96cb-40e3c5daf8f8.png)<br>
 
 
 ### **02. 2 빈객체의 초기화와 소멸 : 커스텀 메서드**
 - <bean> 태그에서 init-method 속성과 destroy-method 속성을 사용해서 초기화 메서드와 소멸 메서드의 이름을 지정해주기만 하면 됨.
-![image](https://user-images.githubusercontent.com/34331235/114177540-7d766080-9977-11eb-84c4-9ac4f8742faa.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177543-80715100-9977-11eb-9bbe-df031c312f6f.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177547-81a27e00-9977-11eb-9958-af52233282cf.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177540-7d766080-9977-11eb-84c4-9ac4f8742faa.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177543-80715100-9977-11eb-9bbe-df031c312f6f.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177547-81a27e00-9977-11eb-9958-af52233282cf.png)<br>
 
 
 ### **03. 객체 범위**
@@ -313,9 +313,9 @@
 - 스프링 컨테이너는 프로토타입의 빈 객체를 생성하고 프로피터를 설정하고 초기화 작업을 수행하지만, 컨테이너를 종료한다고 해서 생성한 프로토타입 빈 객체의 소멸 메서드를 실행하지 않음.
 - 따라서, 프로토타입 범위의 빈을 사용할 때에는 빈 객체의 소멸 처리를 코드에서 직접 해야 함.
 
-![image](https://user-images.githubusercontent.com/34331235/114177584-8cf5a980-9977-11eb-8518-3ff02e8d79e1.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177595-8e26d680-9977-11eb-92c8-c015e88e56e0.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177601-8ff09a00-9977-11eb-862e-ccb39f3df065.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177584-8cf5a980-9977-11eb-8518-3ff02e8d79e1.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177595-8e26d680-9977-11eb-92c8-c015e88e56e0.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177601-8ff09a00-9977-11eb-862e-ccb39f3df065.png)<br>
 
 
 ## **7장. AOP 소개**
@@ -326,16 +326,16 @@
 
 ### **01. 프로젝트 준비**
 - 스프링 AOP를 구현할 때는 pom.xml 파일에 aspectjweaver 모듈의 의존을 추가함
-![image](https://user-images.githubusercontent.com/34331235/114177672-a72f8780-9977-11eb-9351-e326929190e7.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177679-a8f94b00-9977-11eb-879a-6b48ffed1bd6.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177698-adbdff00-9977-11eb-9e27-e2695d7425b5.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177712-b0b8ef80-9977-11eb-9ee1-b8c82dd4d100.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177672-a72f8780-9977-11eb-9351-e326929190e7.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177679-a8f94b00-9977-11eb-879a-6b48ffed1bd6.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177698-adbdff00-9977-11eb-9e27-e2695d7425b5.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177712-b0b8ef80-9977-11eb-9ee1-b8c82dd4d100.png)<br>
 
 ### **02. 프록시와 AOP**
 - 기존 코드를 변경하지 않고 실행 시간을 출력할 수 있음. ImpleCalculator 클래스나 RecCalculator 클래스의 코드를 변경하지 않고,  이 두 클래스의 factorial() 메서드 실행 시간을 출력할 수 있음.
 - 다음과 같이 실행 시간을 구하는 코드의 중복을 제거함.
-![image](https://user-images.githubusercontent.com/34331235/114177746-ba425780-9977-11eb-9899-a4f516d7740c.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177761-bca4b180-9977-11eb-99cd-c7ae9b81e3a7.png)
+<br>![image](https://user-images.githubusercontent.com/34331235/114177746-ba425780-9977-11eb-9899-a4f516d7740c.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177761-bca4b180-9977-11eb-99cd-c7ae9b81e3a7.png)
 
 ### **02. 1 AOP**
 - Aspect Oriented Programming의 약자로, 여러 객채의 공통으로 적용할 수 있는 기능을 구분함으로써 재사용성을 높여주는 프로그래밍 기법임.
@@ -358,18 +358,18 @@
 
 ### **03 1 AOP 구현 : XML 스키마 기반**
 - XML 스키마를 이용할 경우, XML 설정을 이용해서 Aspect를 어디에 적용할지를 설정함.
-![image](https://user-images.githubusercontent.com/34331235/114177844-d645f900-9977-11eb-8de4-d5b7b1bd691e.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177850-d8a85300-9977-11eb-8eae-28353b50456e.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114177859-db0aad00-9977-11eb-9124-f278ee1f2591.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177844-d645f900-9977-11eb-8de4-d5b7b1bd691e.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177850-d8a85300-9977-11eb-8eae-28353b50456e.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177859-db0aad00-9977-11eb-9124-f278ee1f2591.png)<br>
 
 ### **03. 2 AOP 구현 : @Aspect 애노테이션 이용**
 - @Aspect 애노테이션을 이용한 공통 기능의 구현 방법은 POJO 방식과 크게 다르지 않지만, @Aspect 애노테이션을 적용한 클래스에 공통 기능과 Pointcut을 설정한다는 차이점이 있음
-![image](https://user-images.githubusercontent.com/34331235/114177887-e5c54200-9977-11eb-9018-8fc2ade873bb.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114177887-e5c54200-9977-11eb-9018-8fc2ade873bb.png)<br>
 - 클래스에 @Aspect 애노테이션을 적용함.
 - @Pointcut 애노테이션을 이용해서 Pointcut을 설정함.
 - @Around 애노테이션을 사용해서 메서드가 Around Advice로 사용된다고 설정함.
-![image](https://user-images.githubusercontent.com/34331235/114178030-1dcc8500-9978-11eb-922b-3419a0cf4374.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114178036-1f964880-9978-11eb-9be5-4a301192f171.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114178030-1dcc8500-9978-11eb-922b-3419a0cf4374.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114178036-1f964880-9978-11eb-9be5-4a301192f171.png)<br>
 
 
 ### **03. 3 ProceedingJoinPoint의 메서드**
@@ -387,10 +387,10 @@ org.aspectj.lang.Signature 인터페이스가 제공하는 대표적인 메서�
 
 ### **03. 4 프록시 생성 방식**
 - POJO방식 XML 설정
-![image](https://user-images.githubusercontent.com/34331235/114178088-2e7cfb00-9978-11eb-948f-5b2b6b11fa17.png)
+<br>![image](https://user-images.githubusercontent.com/34331235/114178088-2e7cfb00-9978-11eb-948f-5b2b6b11fa17.png)
 
 - @Aspect 방식 XML 설정
-![image](https://user-images.githubusercontent.com/34331235/114178093-3046be80-9978-11eb-9679-20a9212e164c.png)
+<br>![image](https://user-images.githubusercontent.com/34331235/114178093-3046be80-9978-11eb-9679-20a9212e164c.png)
 
 ### **03. 5 execution 명시자 표현식 예**
 - execution(public void set*(..)) : 리턴 타입이 void이고 메서드 이름이 set으로 시작하고, 파라미터가 0개 이상인 메서드 호출함. 파라미터 부분에 ‘..’을 사용하여 파라미터가 0개 이상인 것을 표현함.
@@ -398,7 +398,7 @@ org.aspectj.lang.Signature 인터페이스가 제공하는 대표적인 메서�
 
 ### **03. 6 Advice 적용 순서**
 - (프록시 적용 순서 ) [ 실행시간측정 프록시 ] -> [ 캐시 프록시 ] -> [ 실제 대상 객체 ]
-![image](https://user-images.githubusercontent.com/34331235/114178119-3b015380-9978-11eb-83d4-e905b4b5bb6e.png)<br>
-![image](https://user-images.githubusercontent.com/34331235/114178129-3fc60780-9978-11eb-9b7a-ab1f39d80ec2.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114178119-3b015380-9978-11eb-83d4-e905b4b5bb6e.png)<br>
+<br>![image](https://user-images.githubusercontent.com/34331235/114178129-3fc60780-9978-11eb-9b7a-ab1f39d80ec2.png)<br>
 **...**
 
