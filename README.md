@@ -4,9 +4,9 @@
 
 ## **Repository Tree**
 
-### :file_folder: [빅데이터](BigData)
-> :open_file_folder: Project : [ipynb file directory](BigData/Project)
-> > :clipboard: [bd.ipynb](BigData/Project/bd.ipynb)
+### :file_folder: [빅데이터](Bigdata)
+> :open_file_folder: Project : [ipynb file directory](Bigdata/Project)
+> > :clipboard: [bd.ipynb](Bigdata/Project/bd.ipynb)
 > >
 > :memo: [README.md](Bigdata/README.md)
 >
