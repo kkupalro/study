@@ -12,7 +12,7 @@
 >
 
 
-### :file_folder:[리눅스](Linux)
+### :file_folder: [리눅스](Linux)
 > :book: [리눅스란.docx](Linux/리눅스란.docx)
 >  
 > :memo: [README.md](Linux/README.md)
@@ -48,4 +48,3 @@
 >  
 > :memo: [README.md](Spring4/README.md) 
 >
-
