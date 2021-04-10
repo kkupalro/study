@@ -18,17 +18,11 @@
 
 
 ### :file_folder: [리눅스](Linux)
-> :book: [리눅스란.docx](Linux/리눅스란.docx)
->  
 > :memo: [README.md](Linux/README.md)
 >
 
 
 ### :file_folder: [네트워크](Network)
-> :book: [네트워크.docx](Network/네트워크.docx)
->  
-> :book: [클라우드.docx](Network/클라우드.docx)
-> 
 > :memo: [README.md](Network/README.md)
 >
 
