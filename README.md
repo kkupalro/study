@@ -1,8 +1,13 @@
 # **📝 개인 공부용 저장소입니다.**
 
-**소스코드 보다는 문서로 정리할 예정입니다.**
+**Git Actions 설정후 MarkDown문서 위주로 업로드할 예정입니다.**
+- :file_folder: Root Directory
+- :open_file_folder: Sub Directory
+- :memo: MarkDown File
+- :clipboard: Source Code
 
-## **Repository Tree**
+
+## **목차**
 
 ### :file_folder: [빅데이터](Bigdata)
 > :open_file_folder: Project : [ipynb file directory](Bigdata/Project)
@@ -44,7 +49,5 @@
 > 
 > :clipboard: [spring.sql](Spring4/spring.sql)
 > 
-> :book: [스프링정리.hwp](Spring4/스프링정리.hwp)
->  
 > :memo: [README.md](Spring4/README.md) 
 >
